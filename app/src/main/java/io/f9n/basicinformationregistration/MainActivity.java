@@ -5,9 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import io.f9n.basicinformationregistration.activities.UserInformationForm;
 
 public class MainActivity extends AppCompatActivity {
     private EditText usernameEditText, passwdEditText;
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (username.equals(defaultAdminName) && passwd.equals(defaultAdminPasswd)) {
             Log.i("login", "successful");
-            // gitIntent intent = new Intent(this. HomeActivity.class);
-            // startActivity(intent);
+            Intent intent = new Intent(this, UserInformationForm.class);
+            startActivity(intent);
         } else {
             Log.i("login", "unsuccessful");
             Toast.makeText(this, R.string.error_message_of_wrong_login, Toast.LENGTH_LONG).show();

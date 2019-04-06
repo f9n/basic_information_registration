@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">Basic Information Registration</string>
-    <string name="default_admin_name">admin</string>
-    <string name="default_admin_passwd">password</string>
+
+    <string name="default_admin_name">a</string>
+    <string name="default_admin_passwd">a</string>
     <string name="error_message_of_wrong_login">Kullanici Adi ve Parola yanlis!</string>
     <string name="text_of_login_button">Giris</string>
     <string name="hint_of_username_edit_text">Kullanici Adi</string>
     <string name="hint_of_password_edit_text">Parola</string>
+
+
+    <string name="text_of_clear_button">Temizle</string>
+    <string name="text_of_save_button">Kaydet</string>
+    <string name="error_message_of_wrong_user_informations">Girdiginiz kullanici bilgileri uygun degil!</string>
     <string name="hint_of_name_edit_text">Isim</string>
     <string name="hint_of_surname_edit_text">Soyisim</string>
+    <string name="hint_of_tc_edit_text">TC kimlik numaraniz</string>
+    <string name="hint_of_email_edit_text">Email adresiniz</string>
+    <string name="hint_of_phone_edit_text">Telefon numaraniz</string>
 </resources>
