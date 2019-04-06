@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BasicInformationRegistration</string>
+    <string name="defaultAdminName">admin</string>
+    <string name="defaultAdminPasswd">password</string>
+    <string name="errorMessageOfWrongLogin">Kullanici Adi ve Parola yanlis!</string>
+    <string name="loginBtn">Giris</string>
+    <string name="username">Kullanici Adi</string>
+    <string name="passwd">Parola</string>
 </resources>
