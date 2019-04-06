@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">BasicInformationRegistration</string>
-    <string name="defaultAdminName">admin</string>
-    <string name="defaultAdminPasswd">password</string>
-    <string name="errorMessageOfWrongLogin">Kullanici Adi ve Parola yanlis!</string>
-    <string name="loginBtn">Giris</string>
-    <string name="username">Kullanici Adi</string>
-    <string name="passwd">Parola</string>
+    <string name="app_name">Basic Information Registration</string>
+    <string name="default_admin_name">admin</string>
+    <string name="default_admin_passwd">password</string>
+    <string name="error_message_of_wrong_login">Kullanici Adi ve Parola yanlis!</string>
+    <string name="text_of_login_button">Giris</string>
+    <string name="hint_of_username_edit_text">Kullanici Adi</string>
+    <string name="hint_of_password_edit_text">Parola</string>
+    <string name="hint_of_name_edit_text">Isim</string>
+    <string name="hint_of_surname_edit_text">Soyisim</string>
 </resources>

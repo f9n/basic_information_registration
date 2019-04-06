@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private EditText usernameEditText, passwdEditText;
 
-    public void bind() {
+    private void bind() {
         this.usernameEditText = (EditText) findViewById(R.id.username);
         this.passwdEditText = (EditText) findViewById(R.id.passwd);
     }
@@ -28,18 +28,18 @@ public class MainActivity extends AppCompatActivity {
     public void handleLogIn(View v) {
         String username = usernameEditText.getText().toString();
         String passwd = passwdEditText.getText().toString();
-        String defaultAdminName = getString(R.string.defaultAdminName);
-        String defaultAdminPasswd = getString(R.string.defaultAdminPasswd);
+        String defaultAdminName = getString(R.string.default_admin_name);
+        String defaultAdminPasswd = getString(R.string.default_admin_passwd);
 
         Log.i("login", String.format("Username: %s, Password: %s", username, passwd));
 
         if (username.equals(defaultAdminName) && passwd.equals(defaultAdminPasswd)) {
             Log.i("login", "successful");
-            // Intent intent = new Intent(this. HomeActivity.class);
+            // gitIntent intent = new Intent(this. HomeActivity.class);
             // startActivity(intent);
         } else {
             Log.i("login", "unsuccessful");
-            Toast.makeText(this, R.string.errorMessageOfWrongLogin, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.error_message_of_wrong_login, Toast.LENGTH_LONG).show();
         }
     }
 
