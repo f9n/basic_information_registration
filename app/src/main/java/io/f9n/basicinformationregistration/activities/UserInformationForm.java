@@ -33,7 +33,7 @@ public class UserInformationForm extends AppCompatActivity {
         this.bind();
     }
 
-    public void handleClearText(View v) {
+    public void handleToClearText(View v) {
         this.clearEditTexts(this.nameEditText, this.surnameEditText, this.tcEditText, this.emailEditText, this.phoneEditText);
     }
 
@@ -43,7 +43,7 @@ public class UserInformationForm extends AppCompatActivity {
         }
     }
 
-    public void handleSave(View v) {
+    public void handleToSave(View v) {
         String name = this.nameEditText.getText().toString();
         String surname = this.surnameEditText.getText().toString();
         String tc = this.tcEditText.getText().toString();
@@ -53,13 +53,13 @@ public class UserInformationForm extends AppCompatActivity {
         User user = new User(name, surname, tc, email, phone);
         Log.i("user_information_form", user.toString());
 
-        if (user.isValid()) {
+        if (user.isNotValid()) {
             Toast.makeText(this, R.string.error_message_of_wrong_user_informations, Toast.LENGTH_LONG).show();
             return;
         }
 
-        // Intent intent = new Intent(this, UserInformation.class);
-        // intent.putExtra("user", user);
-        // startActivity(intent);
+        Intent intent = new Intent(this, UserInformation.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
     }
 }

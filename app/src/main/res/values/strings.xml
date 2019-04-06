@@ -12,9 +12,11 @@
     <string name="text_of_clear_button">Temizle</string>
     <string name="text_of_save_button">Kaydet</string>
     <string name="error_message_of_wrong_user_informations">Girdiginiz kullanici bilgileri uygun degil!</string>
-    <string name="hint_of_name_edit_text">Isim</string>
-    <string name="hint_of_surname_edit_text">Soyisim</string>
-    <string name="hint_of_tc_edit_text">TC kimlik numaraniz</string>
-    <string name="hint_of_email_edit_text">Email adresiniz</string>
-    <string name="hint_of_phone_edit_text">Telefon numaraniz</string>
+    <string name="hint_of_name_text">Isim</string>
+    <string name="hint_of_surname_text">Soyisim</string>
+    <string name="hint_of_tc_text">TC kimlik numaraniz</string>
+    <string name="hint_of_email_text">Email adresiniz</string>
+    <string name="hint_of_phone_text">Telefon numaraniz</string>
+
+    <string name="hint_of_name_and_surname_text">Isim ve Soyisminiz</string>
 </resources>
