@@ -8,20 +8,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 import io.f9n.basicinformationregistration.R;
 import io.f9n.basicinformationregistration.models.User;
 
 
 public class UserInformation extends AppCompatActivity {
-    User user;
-    TextView nameNsurnameText, tcText, emailText, phoneText;
+    @BindView(R.id.name_and_surname_text) TextView nameNsurnameText;
+    @BindView(R.id.tc) TextView tcText;
+    @BindView(R.id.email) TextView emailText;
+    @BindView(R.id.phone) TextView phoneText;
 
-    private void bind() {
-        this.nameNsurnameText = (TextView) findViewById(R.id.name_and_surname_text);
-        this.tcText = (TextView) findViewById(R.id.tc_text);
-        this.emailText = (TextView) findViewById(R.id.email_text);
-        this.phoneText = (TextView) findViewById(R.id.phone_text);
-    }
+    User user;
 
     private void bindUserVariablesToViews() {
         String nameNsurname = String.format("%s %s", user.getName(), user.getSurname());
@@ -35,7 +36,7 @@ public class UserInformation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_information);
-        this.bind();
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         user = intent.getParcelableExtra("user");
@@ -44,11 +45,13 @@ public class UserInformation extends AppCompatActivity {
         this.bindUserVariablesToViews();
     }
 
+    @OnClick(R.id.lectures_button)
     public void handleToDisplayLectures(View v) {
         // Intent intent = new Intent(this, Lectures.class);
         // startActivity(intent);
     }
 
+    @OnClick(R.id.phone)
     public void handleToCall(View v) {
         String phoneNumber = phoneText.getText().toString();
         Log.i("user_information", String.format("Phone Number: %s", phoneNumber));
@@ -58,6 +61,7 @@ public class UserInformation extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.email)
     public void handleToSendEmail(View v) {
         String email = emailText.getText().toString();
         Log.i("user_information", String.format("Email: %s", email));

@@ -9,30 +9,29 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 import io.f9n.basicinformationregistration.R;
 import io.f9n.basicinformationregistration.models.User;
 
 public class UserInformationForm extends AppCompatActivity {
-    private EditText nameEditText, surnameEditText, tcEditText, emailEditText, phoneEditText;
-    private ImageView profilePhoto;
-
-    private void bind() {
-        this.nameEditText = (EditText) findViewById(R.id.name);
-        this.surnameEditText = (EditText) findViewById(R.id.surname);
-        this.tcEditText = (EditText) findViewById(R.id.tc);
-        this.emailEditText = (EditText) findViewById(R.id.email);
-        this.phoneEditText = (EditText) findViewById(R.id.phone);
-        this.profilePhoto = (ImageView) findViewById(R.id.profile_photo);
-    }
+    @BindView(R.id.name) EditText nameEditText;
+    @BindView(R.id.surname) EditText surnameEditText;
+    @BindView(R.id.tc) EditText tcEditText;
+    @BindView(R.id.email) EditText emailEditText;
+    @BindView(R.id.phone) EditText phoneEditText;
+    @BindView(R.id.profile_photo) ImageView profilePhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_information_form);
-
-        this.bind();
+        ButterKnife.bind(this);
     }
 
+    @OnClick(R.id.clear_button)
     public void handleToClearText(View v) {
         this.clearEditTexts(this.nameEditText, this.surnameEditText, this.tcEditText, this.emailEditText, this.phoneEditText);
     }
@@ -43,6 +42,7 @@ public class UserInformationForm extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.save_button)
     public void handleToSave(View v) {
         String name = this.nameEditText.getText().toString();
         String surname = this.surnameEditText.getText().toString();

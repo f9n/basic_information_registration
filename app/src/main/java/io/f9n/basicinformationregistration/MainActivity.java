@@ -8,25 +8,24 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 import io.f9n.basicinformationregistration.activities.UserInformationForm;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText usernameEditText, passwdEditText;
-
-    private void bind() {
-        this.usernameEditText = (EditText) findViewById(R.id.username);
-        this.passwdEditText = (EditText) findViewById(R.id.passwd);
-    }
+    @BindView(R.id.username) EditText usernameEditText;
+    @BindView(R.id.passwd) EditText passwdEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        this.bind();
+        ButterKnife.bind(this);
     }
 
-    public void handleLogIn(View v) {
+    @OnClick(R.id.login_button) void handleToLogIn(View v) {
         String username = usernameEditText.getText().toString();
         String passwd = passwdEditText.getText().toString();
         String defaultAdminName = getString(R.string.default_admin_name);
